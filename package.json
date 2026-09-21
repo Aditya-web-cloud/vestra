@@ -2,6 +2,7 @@
   "name": "vestra-root",
   "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build"
+    "build": "cd frontend && npm install && npm run build && cp -r dist ../dist",
+    "postinstall": "cd frontend && npm install"
   }
 }
