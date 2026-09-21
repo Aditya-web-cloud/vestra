@@ -1,12 +1,10 @@
 {
   "name": "vestra-root",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "cd frontend && npm install && npm run build && cp -r dist ../dist 2>/dev/null || true",
     "postinstall": "cd frontend && npm install",
-    "start": "cd frontend && npx serve -s dist -l $PORT"
-  },
-  "dependencies": {
-    "serve": "^14.2.6"
+    "start": "node server.js"
   }
 }
