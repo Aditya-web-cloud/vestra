@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+backend/venv/
+backend/__pycache__/
+*.pyc
+
+# Environment & Secrets
+.env
+backend/.env
+frontend/.env.local
+
+# Database backups & local SQLite files
+backend/*-backup*.db
+backend/*-before-*.db
+/vestra.db
+!backend/vestra.db
+
+# Build outputs
+frontend/dist/
+frontend/.vercel/
+.vercel/
+
+# Logs & temp
+*.log
+scratch/

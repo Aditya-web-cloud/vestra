@@ -1,0 +1,689 @@
+/* ======================================================
+   VESTRA EDITORIAL SHOWCASE
+====================================================== */
+
+.vestra-editorial {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 755px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 12% 20%,
+            rgba(255, 237, 229, 0.92),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 88% 38%,
+            rgba(238, 226, 255, 0.92),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #fffafa 0%,
+            #fffdfd 48%,
+            #f8f3ff 100%
+        );
+}
+
+
+/* ======================================================
+   MAIN CONTENT AREA
+====================================================== */
+
+.vestra-editorial-content {
+    position: relative;
+
+    width: min(
+        960px,
+        92vw
+    );
+
+    height: 680px;
+}
+
+
+/* ======================================================
+   PINK / LILAC ORGANIC SHAPE
+====================================================== */
+
+.vestra-editorial-shape {
+    position: absolute;
+
+    z-index: 1;
+
+    width: 620px;
+    height: 610px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%
+        50%
+        42%
+        42%;
+
+    background:
+        linear-gradient(
+            140deg,
+            #ffd3e1 0%,
+            #f8cfe4 45%,
+            #e8d7ff 100%
+        );
+}
+
+
+/* ======================================================
+   DOTTED OUTLINE
+====================================================== */
+
+.vestra-editorial-outline {
+    position: absolute;
+
+    z-index: 0;
+
+    width: 625px;
+    height: 625px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border:
+        1px
+        dashed
+        rgba(
+            255,
+            63,
+            108,
+            0.26
+        );
+
+    border-radius: 50%;
+}
+
+
+/* ======================================================
+   LARGE MAIN IMAGE
+====================================================== */
+
+.vestra-editorial-main-frame {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 510px;
+    height: 635px;
+
+    left: 50%;
+    top: 5px;
+
+    transform:
+        translateX(
+            -50%
+        );
+
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border-radius:
+        260px
+        260px
+        36px
+        36px;
+
+    background: #eeeeef;
+
+    box-shadow:
+        0
+        28px
+        70px
+        rgba(
+            32,
+            26,
+            43,
+            0.16
+        );
+}
+
+
+.vestra-editorial-main-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    /*
+        Moves the subject higher in the
+        arched frame.
+    */
+    object-position:
+        center 28%;
+
+    transition:
+        transform
+        0.7s
+        cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
+}
+
+
+.vestra-editorial-main-frame:hover
+.vestra-editorial-main-image {
+
+    transform:
+        scale(1.025);
+}
+
+
+/* ======================================================
+   SMALL LEHENGA IMAGE
+====================================================== */
+
+.vestra-editorial-small-frame {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 220px;
+    height: 305px;
+
+    left: 0;
+    bottom: 8px;
+
+    padding: 10px;
+
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0
+        24px
+        60px
+        rgba(
+            34,
+            27,
+            43,
+            0.18
+        );
+}
+
+
+.vestra-editorial-small-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position:
+        center 16%;
+
+    border-radius: 14px;
+
+    transition:
+        transform
+        0.6s
+        ease;
+}
+
+
+.vestra-editorial-small-frame:hover
+.vestra-editorial-small-image {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* ======================================================
+   VESTRA EDIT CARD
+====================================================== */
+
+.vestra-editorial-label {
+    position: absolute;
+
+    z-index: 6;
+
+    right: 0;
+    bottom: 22px;
+
+    width: 245px;
+
+    padding:
+        27px
+        30px;
+
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.97
+        );
+
+    box-shadow:
+        0
+        20px
+        50px
+        rgba(
+            39,
+            31,
+            53,
+            0.1
+        );
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+
+.vestra-editorial-eyebrow {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ff3f6c;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.vestra-editorial-label h2 {
+    margin: 0;
+
+    color: #202124;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.vestra-editorial-label p {
+    margin:
+        6px
+        0
+        0;
+
+    color: #85838b;
+
+    font-size: 12px;
+}
+
+
+/* ======================================================
+   DECORATIVE STARS
+====================================================== */
+
+.vestra-editorial-star {
+    position: absolute;
+
+    z-index: 7;
+
+    pointer-events: none;
+}
+
+
+.vestra-editorial-star-left {
+    top: 70px;
+    left: 15%;
+
+    color: #7967ff;
+
+    font-size: 38px;
+}
+
+
+.vestra-editorial-star-right {
+    top: 130px;
+    right: 13%;
+
+    color: #ff3f6c;
+
+    font-size: 35px;
+}
+
+
+/* ======================================================
+   LARGE RIGHT CIRCLE
+====================================================== */
+
+.vestra-editorial-ring {
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    top: -100px;
+    right: -120px;
+
+    border:
+        1px
+        solid
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* ======================================================
+   TABLET
+====================================================== */
+
+@media (
+    max-width: 900px
+) {
+
+    .vestra-editorial {
+        min-height: 640px;
+    }
+
+
+    .vestra-editorial-content {
+        width: min(760px, 94vw);
+
+        height: 580px;
+    }
+
+
+    .vestra-editorial-shape {
+        width: min(520px, 80vw);
+        height: min(515px, 80vw);
+    }
+
+
+    .vestra-editorial-outline {
+        width: min(525px, 82vw);
+        height: min(525px, 82vw);
+    }
+
+
+    .vestra-editorial-main-frame {
+        width: min(420px, 68vw);
+        height: min(530px, 85vw);
+    }
+
+
+    .vestra-editorial-small-frame {
+        width: 170px;
+        height: 235px;
+
+        left: 10px;
+    }
+
+
+    .vestra-editorial-label {
+        width: 215px;
+
+        right: 10px;
+
+        padding:
+            20px
+            22px;
+    }
+
+
+    .vestra-editorial-star-left {
+        left: 6%;
+    }
+
+
+    .vestra-editorial-star-right {
+        right: 5%;
+    }
+}
+
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (
+    max-width: 650px
+) {
+
+    .vestra-editorial {
+        min-height: 540px;
+        padding: 16px 0;
+    }
+
+
+    .vestra-editorial-content {
+        width: 100%;
+        max-width: 100%;
+
+        height: 490px;
+    }
+
+
+    .vestra-editorial-shape {
+        width: min(340px, 84vw);
+        height: min(340px, 84vw);
+
+        top: 44%;
+    }
+
+
+    .vestra-editorial-outline {
+        width: min(350px, 86vw);
+        height: min(350px, 86vw);
+
+        top: 42%;
+    }
+
+
+    .vestra-editorial-main-frame {
+        width: min(290px, 72vw);
+        height: 390px;
+
+        top: 0;
+
+        border-radius:
+            140px
+            140px
+            24px
+            24px;
+    }
+
+
+    .vestra-editorial-main-image {
+        object-position:
+            center 30%;
+    }
+
+
+    .vestra-editorial-small-frame {
+        width: 110px;
+        height: 155px;
+
+        left: 8px;
+        bottom: 8px;
+
+        padding: 6px;
+
+        border-radius: 14px;
+    }
+
+
+    .vestra-editorial-small-image {
+        border-radius: 10px;
+    }
+
+
+    .vestra-editorial-label {
+        width: 165px;
+
+        right: 8px;
+        bottom: 12px;
+
+        padding:
+            14px
+            15px;
+
+        border-radius: 14px;
+    }
+
+
+    .vestra-editorial-eyebrow {
+        font-size: 8px;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .vestra-editorial-label h2 {
+        font-size: 15px;
+    }
+
+
+    .vestra-editorial-label p {
+        font-size: 10px;
+    }
+
+
+    .vestra-editorial-star-left {
+        top: 35px;
+        left: 4%;
+
+        font-size: 24px;
+    }
+
+
+    .vestra-editorial-star-right {
+        top: 80px;
+        right: 3%;
+
+        font-size: 22px;
+    }
+}
+
+
+/* ======================================================
+   VERY SMALL PHONES
+====================================================== */
+
+@media (
+    max-width: 390px
+) {
+
+    .vestra-editorial {
+        min-height: 480px;
+    }
+
+
+    .vestra-editorial-content {
+        height: 440px;
+    }
+
+
+    .vestra-editorial-main-frame {
+        width: min(250px, 70vw);
+        height: 340px;
+    }
+
+
+    .vestra-editorial-shape {
+        width: min(280px, 82vw);
+        height: min(280px, 82vw);
+    }
+
+
+    .vestra-editorial-outline {
+        width: min(290px, 84vw);
+        height: min(290px, 84vw);
+    }
+
+
+    .vestra-editorial-small-frame {
+        width: 90px;
+        height: 130px;
+        left: 4px;
+        bottom: 6px;
+    }
+
+
+    .vestra-editorial-label {
+        width: 145px;
+        right: 4px;
+        bottom: 8px;
+
+        padding:
+            10px
+            12px;
+    }
+
+
+    .vestra-editorial-label h2 {
+        font-size: 13px;
+    }
+
+
+    .vestra-editorial-label p {
+        font-size: 9px;
+    }
+}

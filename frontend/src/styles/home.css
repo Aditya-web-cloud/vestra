@@ -1,0 +1,1687 @@
+/* =========================================================
+   VESTRA HOME
+========================================================= */
+
+.vestra-home {
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+
+    background: #ffffff;
+
+    color: #282c3f;
+}
+
+
+/* =========================================================
+   SALE STRIP
+========================================================= */
+
+.home-sale-strip {
+    width: 100%;
+    min-height: 36px;
+
+    padding:
+        0
+        4%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3f6c,
+            #ff905a
+        );
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    text-decoration: none;
+}
+
+
+.home-sale-strip strong {
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   HERO
+   IMPORTANT: NO BLANK WHITE AREA BELOW BANNER
+========================================================= */
+
+.home-hero {
+    position: relative;
+
+    width: 100%;
+    height: clamp(
+        330px,
+        34vw,
+        510px
+    );
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #eeeef0;
+}
+
+
+.home-hero-link {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    text-decoration: none;
+}
+
+
+.home-hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    margin: 0;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 0;
+}
+
+
+.home-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(
+                18,
+                20,
+                29,
+                0.62
+            )
+            0%,
+            rgba(
+                18,
+                20,
+                29,
+                0.28
+            )
+            43%,
+            rgba(
+                18,
+                20,
+                29,
+                0.04
+            )
+            74%
+        );
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.home-hero-copy {
+    position: absolute;
+
+    z-index: 3;
+
+    top: 50%;
+    left: 7%;
+
+    max-width: 480px;
+
+    transform:
+        translateY(-50%);
+
+    color: #ffffff;
+}
+
+
+.home-hero-eyebrow {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.home-hero-copy h1 {
+    margin: 0;
+
+    max-width: 470px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        34px,
+        4vw,
+        62px
+    );
+
+    font-weight: 800;
+
+    line-height: 0.98;
+
+    letter-spacing: -1.5px;
+}
+
+
+.home-hero-copy p {
+    margin:
+        16px
+        0
+        0;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.home-hero-copy > strong {
+    margin-top: 15px;
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    font-weight: 900;
+}
+
+
+.home-hero-button {
+    width: fit-content;
+
+    min-height: 42px;
+
+    margin-top: 22px;
+
+    padding:
+        0
+        18px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background: #ffffff;
+
+    color: #282c3f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+}
+
+
+.home-hero-button b {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HERO DOTS
+   OVERLAYED INSIDE HERO — NO EXTRA SPACE
+========================================================= */
+
+.home-hero-dots {
+    position: absolute;
+
+    z-index: 5;
+
+    right: 0;
+    bottom: 14px;
+    left: 0;
+
+    height: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+}
+
+
+.home-hero-dots button {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    cursor: pointer;
+
+    transition:
+        width
+        0.2s
+        ease,
+        background
+        0.2s
+        ease;
+}
+
+
+.home-hero-dots button.active {
+    width: 24px;
+
+    background: #ff3f6c;
+}
+
+
+/* =========================================================
+   COMMON SECTION TITLE
+========================================================= */
+
+.home-section-title {
+    margin-bottom: 24px;
+}
+
+
+.home-section-title h2,
+.home-section-heading-row h2 {
+    margin: 0;
+
+    color: #293450;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+}
+
+
+/* =========================================================
+   WOW DEALS SECTION
+========================================================= */
+
+.home-wow-section {
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+        38px
+        2.8%
+        48px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   WOW DEALS — ONE WIDE BANNER
+========================================================= */
+
+.home-wow-banner {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    overflow: hidden;
+
+    border:
+        1px
+        solid
+        #f0d6de;
+
+    background: #ffffff;
+
+    box-shadow:
+        0
+        4px
+        20px
+        rgba(
+            40,
+            44,
+            63,
+            0.06
+        );
+}
+
+
+.home-wow-deal {
+    position: relative;
+
+    min-height: 175px;
+
+    padding:
+        26px
+        24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-right:
+        1px
+        solid
+        rgba(
+            40,
+            44,
+            63,
+            0.08
+        );
+
+    color: #282c3f;
+
+    text-decoration: none;
+
+    transition:
+        transform
+        0.22s
+        ease,
+        box-shadow
+        0.22s
+        ease;
+}
+
+
+.home-wow-deal:last-child {
+    border-right: 0;
+}
+
+
+.home-wow-deal:hover {
+    z-index: 2;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0
+        10px
+        26px
+        rgba(
+            40,
+            44,
+            63,
+            0.1
+        );
+}
+
+
+.home-wow-eyebrow {
+    color: #ff3f6c;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+.home-wow-offer {
+    margin-top: 9px;
+
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+.home-wow-offer > span {
+    color: #282c3f;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+
+.home-wow-offer > strong {
+    color: #1f2c4b;
+
+    font-size: 28px;
+
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+
+.home-wow-deal p {
+    margin:
+        9px
+        0
+        0;
+
+    color: #696b79;
+
+    font-size: 9px;
+}
+
+
+.home-wow-shop {
+    margin-top: 20px;
+
+    color: #282c3f;
+
+    font-size: 8px;
+
+    font-weight: 900;
+}
+
+
+.wow-pink {
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f4,
+            #fff8f2
+        );
+}
+
+
+.wow-purple {
+    background:
+        linear-gradient(
+            135deg,
+            #fbf0fa,
+            #f4f0ff
+        );
+}
+
+
+.wow-blue {
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #f3fbff
+        );
+}
+
+
+.wow-gold {
+    background:
+        linear-gradient(
+            135deg,
+            #fff7e8,
+            #fff1dc
+        );
+}
+
+
+/* =========================================================
+   PRODUCT SECTIONS
+========================================================= */
+
+.home-product-section {
+    width: 100%;
+
+    padding:
+        42px
+        3%
+        52px;
+
+    background: #ffffff;
+}
+
+
+.home-product-section:nth-of-type(even) {
+    background: #ffffff;
+}
+
+
+.home-section-heading-row {
+    margin-bottom: 26px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.home-section-heading-row p {
+    margin:
+        7px
+        0
+        0;
+
+    color: #7e818c;
+
+    font-size: 10px;
+}
+
+
+.home-view-all {
+    padding-bottom: 3px;
+
+    border-bottom:
+        1px
+        solid
+        #282c3f;
+
+    color: #282c3f;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+========================================================= */
+
+.home-products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:
+        30px
+        12px;
+}
+
+
+/* =========================================================
+   PRODUCT LOADING
+========================================================= */
+
+.home-products-loading {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 12px;
+}
+
+
+.home-product-skeleton {
+    aspect-ratio: 0.74;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f1f1f3
+            25%,
+            #fafafa
+            50%,
+            #f1f1f3
+            75%
+        );
+
+    background-size:
+        200%
+        100%;
+
+    animation:
+        homeProductLoading
+        1.2s
+        linear
+        infinite;
+}
+
+
+@keyframes homeProductLoading {
+
+    from {
+        background-position:
+            200%
+            0;
+    }
+
+    to {
+        background-position:
+            -200%
+            0;
+    }
+}
+
+
+.home-empty-products {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #94969f;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SHOP BY CATEGORY
+========================================================= */
+
+.home-category-section {
+    width: 100%;
+
+    padding:
+        44px
+        3%
+        55px;
+
+    background: #f8f8f8;
+}
+
+
+.home-category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    justify-content: center;
+
+    gap:
+        22px
+        11px;
+}
+
+
+.home-category-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    color: #282c3f;
+
+    text-decoration: none;
+
+    transition:
+        transform
+        0.22s
+        ease,
+        box-shadow
+        0.22s
+        ease;
+}
+
+
+.home-category-card:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0
+        8px
+        18px
+        rgba(
+            40,
+            44,
+            63,
+            0.1
+        );
+}
+
+
+/* =========================================================
+   CATEGORY IMAGE
+========================================================= */
+
+.home-category-image {
+    width: 100%;
+
+    aspect-ratio: 0.82;
+
+    overflow: hidden;
+
+    background: #ededee;
+}
+
+
+.home-category-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    transition:
+        transform
+        0.3s
+        ease;
+}
+
+
+.home-category-card:hover
+.home-category-image img {
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================================
+   CATEGORY TEXT
+========================================================= */
+
+.home-category-copy {
+    min-height: 82px;
+
+    padding:
+        10px
+        8px
+        12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #aee4ff,
+            #91d7fa
+        );
+
+    text-align: center;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.home-category-copy h3 {
+    margin: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #17305c;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    letter-spacing: normal;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+.home-category-copy strong {
+    margin-top: 5px;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #17305c;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    box-sizing: border-box;
+}
+
+
+.home-category-copy span {
+    margin-top: 4px;
+
+    color: #17305c;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FESTIVE BANNER
+========================================================= */
+
+.home-festive-banner {
+    width: 100%;
+
+    height: 390px;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    background: #eeeeef;
+}
+
+
+.home-festive-banner > a {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    overflow: hidden;
+
+    text-decoration: none;
+}
+
+
+.home-festive-banner img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center 35%;
+}
+
+
+.home-festive-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(
+                19,
+                17,
+                17,
+                0.65
+            ),
+            rgba(
+                19,
+                17,
+                17,
+                0.1
+            )
+        );
+}
+
+
+.home-festive-copy {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+    left: 7%;
+
+    transform:
+        translateY(-50%);
+
+    color: #ffffff;
+}
+
+
+.home-festive-copy > span {
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+}
+
+
+.home-festive-copy h2 {
+    margin:
+        10px
+        0
+        0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        35px,
+        4vw,
+        56px
+    );
+
+    font-weight: 500;
+}
+
+
+.home-festive-copy > strong {
+    margin-top: 10px;
+
+    display: block;
+
+    font-size: 20px;
+}
+
+
+.home-festive-copy > em {
+    margin-top: 20px;
+
+    display: inline-block;
+
+    padding-bottom: 4px;
+
+    border-bottom:
+        1px
+        solid
+        #ffffff;
+
+    font-size: 9px;
+
+    font-style: normal;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.home-trust-strip {
+    width: 100%;
+
+    padding:
+        32px
+        4%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    background: #fafafa;
+
+    border-top:
+        1px
+        solid
+        #eeeeef;
+}
+
+
+.home-trust-strip > div {
+    min-height: 55px;
+
+    padding:
+        0
+        20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-right:
+        1px
+        solid
+        #e5e5e7;
+
+    text-align: center;
+}
+
+
+.home-trust-strip > div:last-child {
+    border-right: 0;
+}
+
+
+.home-trust-strip strong {
+    color: #282c3f;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+.home-trust-strip span {
+    margin-top: 5px;
+
+    color: #94969f;
+
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE 1200
+========================================================= */
+
+@media (
+    max-width: 1200px
+) {
+
+    .home-wow-banner {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .home-wow-deal:nth-child(2) {
+        border-right: 0;
+    }
+
+
+    .home-wow-deal:nth-child(-n + 2) {
+        border-bottom:
+            1px
+            solid
+            rgba(
+                40,
+                44,
+                63,
+                0.08
+            );
+    }
+
+
+    .home-products-grid,
+    .home-products-loading {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .home-category-grid {
+        grid-template-columns:
+            repeat(
+                6,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 950
+========================================================= */
+
+@media (
+    max-width: 950px
+) {
+
+    .home-hero {
+        height: 390px;
+    }
+
+
+    .home-hero-copy {
+        left: 5%;
+    }
+
+
+    .home-products-grid,
+    .home-products-loading {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .home-category-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+}
+
+
+/* =========================================================
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+    max-width: 760px
+) {
+
+    .home-sale-strip {
+        min-height: 36px;
+
+        gap: 12px;
+
+        font-size: 11px;
+    }
+
+
+    .home-sale-strip strong {
+        font-size: 11px;
+    }
+
+
+    .home-hero {
+        height: 340px;
+    }
+
+
+    .home-hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(
+                    18,
+                    20,
+                    29,
+                    0.72
+                ),
+                rgba(
+                    18,
+                    20,
+                    29,
+                    0.25
+                )
+            );
+    }
+
+
+    .home-hero-copy {
+        max-width: 400px;
+    }
+
+
+    .home-section-title h2,
+    .home-section-heading-row h2 {
+        font-size: 19px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .home-wow-section,
+    .home-product-section,
+    .home-category-section {
+        padding-right: 18px;
+
+        padding-left: 18px;
+    }
+
+
+    .home-products-grid,
+    .home-products-loading {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .home-category-grid {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    .home-festive-banner {
+        height: 330px;
+    }
+
+
+    .home-trust-strip {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+        gap: 20px 0;
+    }
+
+
+    .home-trust-strip > div:nth-child(2) {
+        border-right: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+    max-width: 600px
+) {
+
+    .home-sale-strip {
+        padding:
+            0
+            12px;
+
+        min-height: 36px;
+
+        justify-content: center;
+
+        font-size: 11px;
+    }
+
+
+    .home-sale-strip > span:first-child {
+        display: none;
+    }
+
+
+    .home-hero {
+        height: 320px;
+    }
+
+
+    .home-hero-image {
+        object-position: center;
+    }
+
+
+    .home-hero-copy {
+        right: 18px;
+        left: 18px;
+
+        max-width: none;
+    }
+
+
+    .home-hero-copy h1 {
+        max-width: 100%;
+
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+
+    .home-hero-copy p {
+        max-width: 320px;
+
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+
+    .home-hero-copy > strong {
+        font-size: 16px;
+    }
+
+
+    .home-hero-button {
+        min-height: 42px;
+
+        margin-top: 16px;
+
+        padding:
+            0
+            18px;
+
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+    }
+
+
+    .home-wow-section {
+        padding:
+            28px
+            12px
+            36px;
+    }
+
+
+    .home-wow-banner {
+        grid-template-columns: 1fr;
+    }
+
+
+    .home-wow-deal,
+    .home-wow-deal:nth-child(2) {
+        min-height: 130px;
+
+        border-right: 0;
+
+        border-bottom:
+            1px
+            solid
+            rgba(
+                40,
+                44,
+                63,
+                0.08
+            );
+    }
+
+
+    .home-wow-deal:last-child {
+        border-bottom: 0;
+    }
+
+
+    .home-wow-offer > strong {
+        font-size: 24px;
+    }
+
+
+    .home-product-section {
+        padding:
+            32px
+            10px
+            40px;
+    }
+
+
+    .home-section-heading-row {
+        margin-bottom: 16px;
+
+        padding:
+            0
+            6px;
+    }
+
+
+    .home-section-heading-row p {
+        display: none;
+    }
+
+
+    .home-section-title {
+        margin-bottom: 16px;
+    }
+
+
+    .home-section-title h2,
+    .home-section-heading-row h2 {
+        font-size: 17px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .home-products-grid,
+    .home-products-loading {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:
+            20px
+            10px;
+    }
+
+
+    .home-category-section {
+        padding:
+            32px
+            10px
+            40px;
+    }
+
+
+    .home-category-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:
+            14px
+            10px;
+    }
+
+
+    .home-category-copy {
+        min-height: 68px;
+        padding: 8px 6px;
+    }
+
+
+    .home-category-copy h3 {
+        font-size: 11px;
+    }
+
+
+    .home-category-copy strong {
+        font-size: 13px;
+    }
+
+
+    .home-category-copy span {
+        font-size: 10px;
+    }
+
+
+    .home-festive-banner {
+        height: 290px;
+    }
+
+
+    .home-festive-copy {
+        right: 18px;
+        left: 18px;
+    }
+
+
+    .home-festive-copy h2 {
+        font-size: clamp(24px, 8vw, 34px);
+    }
+
+
+    .home-trust-strip {
+        padding:
+            26px
+            12px;
+        gap: 16px 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (
+    max-width: 380px
+) {
+
+    .home-hero {
+        height: 290px;
+    }
+
+
+    .home-hero-copy h1 {
+        font-size: 23px;
+    }
+
+
+    .home-category-grid {
+        gap: 10px 8px;
+    }
+
+
+    .home-products-grid,
+    .home-products-loading {
+        gap:
+            18px
+            8px;
+    }
+}

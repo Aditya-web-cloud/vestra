@@ -1,0 +1,263 @@
+/* ======================================================
+   SIGNED-IN NAV ACCOUNT
+====================================================== */
+
+.account-nav {
+    position: relative;
+}
+
+
+.account-nav-trigger {
+    min-width: 55px;
+
+    padding: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 3px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #282c3f;
+
+    cursor: pointer;
+}
+
+
+.account-nav-avatar {
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #202024;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 11px;
+}
+
+
+.account-nav-name {
+    max-width: 70px;
+
+    overflow: hidden;
+
+    font-size: 9px;
+
+    font-weight: 850;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.account-nav-trigger:hover
+.account-nav-name {
+    color: #ff3f6c;
+}
+
+
+/* ======================================================
+   DROPDOWN
+====================================================== */
+
+.account-nav-menu {
+    position: absolute;
+
+    top: 51px;
+    right: -15px;
+
+    z-index: 6000;
+
+    width: 270px;
+
+    padding:
+        20px;
+
+    border:
+        1px
+        solid
+        #eceaed;
+
+    background: #ffffff;
+
+    box-shadow:
+        0
+        20px
+        50px
+        rgba(
+            30,
+            28,
+            34,
+            0.14
+        );
+}
+
+
+.account-nav-user {
+    padding-bottom: 16px;
+
+    display: grid;
+
+    gap: 3px;
+
+    border-bottom:
+        1px
+        solid
+        #eceaed;
+}
+
+
+.account-nav-user > span {
+    color: #ff3f6c;
+
+    font-size: 7px;
+
+    font-weight: 950;
+
+    letter-spacing: 1.7px;
+}
+
+
+.account-nav-user strong {
+    overflow: hidden;
+
+    font-size: 12px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.account-nav-user small {
+    color: #98959c;
+
+    font-size: 9px;
+}
+
+
+.account-nav-menu nav {
+    padding:
+        9px
+        0;
+
+    display: grid;
+}
+
+
+.account-nav-menu nav a {
+    min-height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    color: #5e5b63;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+}
+
+
+.account-nav-menu nav a b {
+    transition:
+        transform
+        0.2s;
+}
+
+
+.account-nav-menu nav a:hover {
+    color: #ff3f6c;
+}
+
+
+.account-nav-menu nav a:hover b {
+    transform:
+        translateX(3px);
+}
+
+
+.account-nav-logout {
+    width: 100%;
+
+    min-height: 40px;
+
+    margin-top: 5px;
+
+    border:
+        1px
+        solid
+        #dedbe0;
+
+    background: #ffffff;
+
+    color: #55525a;
+
+    cursor: pointer;
+
+    font-size: 8px;
+
+    font-weight: 950;
+
+    letter-spacing: 1px;
+}
+
+
+.account-nav-logout:hover {
+    color: #ff3f6c;
+
+    border-color: #ff3f6c;
+}
+
+
+/* ======================================================
+   MOBILE LOGOUT
+====================================================== */
+
+.account-mobile-logout {
+    min-height: 48px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-bottom:
+        1px
+        solid
+        #eeeeee;
+
+    background: transparent;
+
+    color: #ff3f6c;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 900;
+}
