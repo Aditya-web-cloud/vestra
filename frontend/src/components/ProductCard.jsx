@@ -268,36 +268,61 @@ function ProductCard({
     useEffect(
         () => {
 
-            const wishlist =
-                readWishlist();
+            function syncWishlist() {
+                const wishlist =
+                    readWishlist();
 
-
-            const exists =
-                wishlist.some(
-                    item =>
-                        Number(
-                            typeof item
+                const exists =
+                    wishlist.some(
+                        item =>
+                            Number(
+                                typeof item
+                                ===
+                                "object"
+                                    ?
+                                    item?.id
+                                    :
+                                    item
+                            )
                             ===
-                            "object"
-                                ?
-                                item?.id
-                                :
-                                item
-                        )
-                        ===
-                        productId
+                            productId
+                    );
+
+                setWished(
+                    exists
+                );
+            }
+
+            syncWishlist();
+
+            window.addEventListener(
+                "vestra:wishlist-updated",
+                syncWishlist
+            );
+
+            window.addEventListener(
+                "storage",
+                syncWishlist
+            );
+
+            return () => {
+                window.removeEventListener(
+                    "vestra:wishlist-updated",
+                    syncWishlist
                 );
 
-
-            setWished(
-                exists
-            );
+                window.removeEventListener(
+                    "storage",
+                    syncWishlist
+                );
+            };
 
         },
         [
             productId,
         ]
     );
+
 
 
     /* =====================================================
@@ -385,7 +410,7 @@ function ProductCard({
                         brand,
 
                     image_url:
-                        image,
+                        displayImage,
 
                     base_price:
                         mrp,

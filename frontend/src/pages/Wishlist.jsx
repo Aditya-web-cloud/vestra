@@ -216,17 +216,39 @@ function Wishlist() {
     const [
         products,
         setProducts
-    ] = useState([]);
+    ] = useState(() => {
+        const saved = readWishlist();
+        return saved.map(item => {
+            if (typeof item === "object" && item !== null) {
+                return {
+                    id: Number(item.id || item.product_id),
+                    name: item.name || "Product",
+                    brand: getBrand(item),
+                    image_url: item.image_url || item.image || "/product-placeholder.png",
+                    base_price: Number(item.base_price || item.price) || 0,
+                    discount_percentage: Number(item.discount_percentage) || 0,
+                    rating: Number(item.rating) || 0,
+                    variants: Array.isArray(item.variants) ? item.variants : [],
+                };
+            }
+            return {
+                id: Number(item),
+                name: `Product #${item}`,
+                image_url: "/product-placeholder.png",
+                base_price: 0,
+            };
+        }).filter(p => Number.isFinite(p.id) && p.id > 0);
+    });
 
 
     const [
         loading,
         setLoading
-    ] = useState(true);
+    ] = useState(false);
 
 
     /* =====================================================
-       LOAD WISHLIST PRODUCTS
+       LOAD & SYNC WISHLIST PRODUCTS
     ===================================================== */
 
     useEffect(
@@ -236,231 +258,121 @@ function Wishlist() {
                 new AbortController();
 
 
-            async function loadWishlist() {
+            function syncFromStorage() {
+                const saved = readWishlist();
+                const currentList = saved.map(item => {
+                    if (typeof item === "object" && item !== null) {
+                        return {
+                            id: Number(item.id || item.product_id),
+                            name: item.name || "Product",
+                            brand: getBrand(item),
+                            image_url: item.image_url || item.image || "/product-placeholder.png",
+                            base_price: Number(item.base_price || item.price) || 0,
+                            discount_percentage: Number(item.discount_percentage) || 0,
+                            rating: Number(item.rating) || 0,
+                            variants: Array.isArray(item.variants) ? item.variants : [],
+                        };
+                    }
+                    return {
+                        id: Number(item),
+                        name: `Product #${item}`,
+                        image_url: "/product-placeholder.png",
+                        base_price: 0,
+                    };
+                }).filter(p => Number.isFinite(p.id) && p.id > 0);
+
+                setProducts(currentList);
+            }
+
+
+            async function enrichWishlist() {
+                const saved = readWishlist();
+                if (saved.length === 0) {
+                    setProducts([]);
+                    return;
+                }
+
+                const ids = [
+                    ...new Set(
+                        saved
+                            .map(productIdFromItem)
+                            .filter(id => Number.isFinite(id) && id > 0)
+                    )
+                ];
+
+                if (ids.length === 0) return;
 
                 try {
-
-                    setLoading(
-                        true
-                    );
-
-
-                    const saved =
-                        readWishlist();
-
-
-                    if (
-                        saved.length === 0
-                    ) {
-
-                        setProducts([]);
-
-                        return;
-                    }
-
-
-                    const ids =
-                        [
-                            ...new Set(
-                                saved
-                                    .map(
-                                        productIdFromItem
-                                    )
-                                    .filter(
-                                        id =>
-                                            Number.isFinite(
-                                                id
-                                            )
-                                            &&
-                                            id > 0
-                                    )
-                            )
-                        ];
-
-
-                    if (
-                        ids.length === 0
-                    ) {
-
-                        setProducts([]);
-
-                        localStorage.setItem(
-                            WISHLIST_KEY,
-                            "[]"
-                        );
-
-                        window.dispatchEvent(
-                            new Event(
-                                "vestra:wishlist-updated"
-                            )
-                        );
-
-                        return;
-                    }
-
-
-                    const resolved =
-                        await Promise.all(
-                            ids.map(
-                                async id => {
-
-                                    try {
-
-                                        const response =
-                                            await fetch(
-                                                `${API_URL}/products/${id}`,
-                                                {
-                                                    signal:
-                                                        controller.signal,
-                                                }
-                                            );
-
-
-                                        if (
-                                            response.ok
-                                        ) {
-
-                                            const data =
-                                                await response.json();
-
-                                            if (
-                                                data
-                                                &&
-                                                data.is_active !== false
-                                                &&
-                                                data.id
-                                            ) {
-
-                                                return data;
-                                            }
-                                        }
-
-                                    } catch (
-                                        error
-                                    ) {
-
-                                        if (
-                                            error?.name
-                                            ===
-                                            "AbortError"
-                                        ) {
-
-                                            throw error;
-                                        }
-                                    }
-
-                                    // Products that are not active, deleted, or return 404
-                                    // cannot redirect to product section. Do not fallback.
-                                    return null;
-                                }
-                            )
-                        );
-
-
-                    const validProducts =
-                        resolved.filter(
-                            Boolean
-                        );
-
-
-                    setProducts(
-                        validProducts
-                    );
-
-
-                    // Synchronize storage: prune items that cannot redirect to product section
-                    const validIds =
-                        new Set(
-                            validProducts.map(
-                                p =>
-                                    Number(
-                                        p.id
-                                    )
-                            )
-                        );
-
-
-                    const cleanedSaved =
-                        saved.filter(
-                            item => {
-
-                                const pid =
-                                    productIdFromItem(
-                                        item
-                                    );
-
-                                return (
-                                    Number.isFinite(
-                                        pid
-                                    )
-                                    &&
-                                    validIds.has(
-                                        pid
-                                    )
-                                );
+                    const results = await Promise.allSettled(
+                        ids.map(async id => {
+                            const response = await fetch(`${API_URL}/products/${id}`, {
+                                signal: controller.signal,
+                            });
+                            if (response.status === 404) {
+                                return { id, notFound: true };
                             }
-                        );
+                            if (response.ok) {
+                                const data = await response.json();
+                                if (data && data.id) {
+                                    return { id, data };
+                                }
+                            }
+                            return { id, data: null };
+                        })
+                    );
 
-
-                    if (
-                        cleanedSaved.length
-                        !==
-                        saved.length
-                    ) {
-
-                        localStorage.setItem(
-                            WISHLIST_KEY,
-                            JSON.stringify(
-                                cleanedSaved
-                            )
-                        );
-
-                        window.dispatchEvent(
-                            new Event(
-                                "vestra:wishlist-updated"
-                            )
-                        );
-                    }
-
-                } catch (error) {
-
-                    if (
-                        error?.name
-                        !==
-                        "AbortError"
-                    ) {
-
-                        console.error(
-                            "Wishlist loading failed:",
-                            error
-                        );
-                    }
-
-                } finally {
-
-                    if (
-                        !controller.signal.aborted
-                    ) {
-
-                        setLoading(
-                            false
-                        );
+                    setProducts(prev => {
+                        let updated = [...prev];
+                        results.forEach(res => {
+                            if (res.status === "fulfilled") {
+                                const { id, notFound, data } = res.value;
+                                if (notFound) {
+                                    updated = updated.filter(p => Number(p.id || p.product_id) !== id);
+                                } else if (data) {
+                                    const idx = updated.findIndex(p => Number(p.id || p.product_id) === id);
+                                    if (idx >= 0) {
+                                        updated[idx] = { ...updated[idx], ...data };
+                                    }
+                                }
+                            }
+                        });
+                        return updated;
+                    });
+                } catch (err) {
+                    if (err?.name !== "AbortError") {
+                        console.error("Wishlist background refresh error:", err);
                     }
                 }
             }
 
+            enrichWishlist();
 
-            loadWishlist();
+            window.addEventListener(
+                "vestra:wishlist-updated",
+                syncFromStorage
+            );
 
+            window.addEventListener(
+                "storage",
+                syncFromStorage
+            );
 
             return () => {
-
                 controller.abort();
+                window.removeEventListener(
+                    "vestra:wishlist-updated",
+                    syncFromStorage
+                );
+                window.removeEventListener(
+                    "storage",
+                    syncFromStorage
+                );
             };
 
         },
         []
     );
+
 
 
     /* =====================================================

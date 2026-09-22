@@ -595,44 +595,6 @@ function ProductDetail() {
                         "Unable to load this product."
                     );
 
-                    try {
-                        const currentWishlist =
-                            readArray(
-                                WISHLIST_KEY
-                            );
-
-                        const cleaned =
-                            currentWishlist.filter(
-                                item =>
-                                    Number(
-                                        typeof item === "object"
-                                            ? item?.id
-                                            : item
-                                    )
-                                    !==
-                                    productId
-                            );
-
-                        if (
-                            cleaned.length
-                            !==
-                            currentWishlist.length
-                        ) {
-                            localStorage.setItem(
-                                WISHLIST_KEY,
-                                JSON.stringify(
-                                    cleaned
-                                )
-                            );
-
-                            window.dispatchEvent(
-                                new Event(
-                                    "vestra:wishlist-updated"
-                                )
-                            );
-                        }
-                    } catch {}
-
                 } finally {
 
                     if (
