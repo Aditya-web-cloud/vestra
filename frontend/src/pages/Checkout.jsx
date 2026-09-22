@@ -649,7 +649,9 @@ function Checkout() {
 
         const razorpayKey =
             import.meta.env
-                .VITE_RAZORPAY_KEY_ID;
+                .VITE_RAZORPAY_KEY_ID
+            ||
+            "rzp_test_TWgbh1ZXPMo4pl";
 
 
         if (

@@ -81,7 +81,7 @@ load_dotenv(
 RAZORPAY_KEY_ID = (
     os.getenv(
         "RAZORPAY_KEY_ID",
-        "",
+        "rzp_test_TWgbh1ZXPMo4pl",
     )
     .strip()
 )
@@ -90,10 +90,11 @@ RAZORPAY_KEY_ID = (
 RAZORPAY_KEY_SECRET = (
     os.getenv(
         "RAZORPAY_KEY_SECRET",
-        "",
+        "3V9I3xWuBc56nFbhH4yOD4Ej",
     )
     .strip()
 )
+
 
 
 CURRENCY = "INR"
