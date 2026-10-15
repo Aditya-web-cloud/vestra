@@ -1,60 +1,99 @@
-Vestra — Fashion E-Commerce Website
+# Vestra 🛍️
+### Full-Stack Fashion E-Commerce Web Application
 
-Vestra is a full-stack fashion e-commerce web application developed using React for the frontend and FastAPI (Python) for the backend.
+Vestra is a full-stack fashion e-commerce web application built using **React, FastAPI, Python, SQLAlchemy, and Razorpay**. It brings together a modern frontend, RESTful backend services, database operations, and payment gateway integration to create an online shopping experience.
 
-The project demonstrates end-to-end web application development, including frontend-backend integration, RESTful API development, and online payment gateway integration.
+This project demonstrates practical experience in full-stack application development, API integration, and payment processing.
 
-Key Features
+---
 
-- Fashion product browsing and shopping experience
-- Shopping cart functionality
-- Online payment gateway integration
-- Responsive frontend developed with React
-- Backend services developed using Python and FastAPI
-- REST API communication between frontend and backend
+## 🚀 Features
 
-Tech Stack
+- **Fashion Product Catalog** — Browse fashion products through an interactive interface.
+- **Shopping Cart** — Add and manage products in a shopping cart.
+- **Online Payments** — Razorpay integration for payment processing during checkout.
+- **RESTful APIs** — Backend services developed with FastAPI.
+- **Database Integration** — SQLAlchemy ORM for interacting with the application database.
+- **Responsive Frontend** — React-based user interface for an accessible shopping experience.
 
-Component| Technology
-Frontend | React, JavaScript
-Backend  | Python, FastAPI
-API Architecture| REST APIs
-Payments | Integrated payment gateway
-Version Control| Git, GitHub
+## 🛠️ Tech Stack
 
-Project Structure
+| Category | Technologies |
+|---|---|
+| Frontend | React, JavaScript |
+| Backend | Python, FastAPI |
+| ORM | SQLAlchemy |
+| API | REST APIs |
+| Payments | Razorpay |
+| Version Control | Git, GitHub |
 
+## 🏗️ System Architecture
+
+```text
+             ┌───────────────────┐
+             │   React Frontend  │
+             │   (User Interface)│
+             └─────────┬─────────┘
+                       │
+                  REST API
+                       │
+             ┌─────────▼─────────┐
+             │  FastAPI Backend  │
+             │   (Python)        │
+             └─────────┬─────────┘
+                       │
+              ┌────────┴────────┐
+              │                 │
+       ┌──────▼───────┐  ┌──────▼───────┐
+       │ SQLAlchemy   │  │   Razorpay   │
+       │ ORM          │  │ Payment API  │
+       └──────┬───────┘  └──────────────┘
+              │
+       ┌──────▼───────┐
+       │   Database   │
+       └──────────────┘
+```
+
+## 📂 Project Structure
+
+```text
 vestra/
-├── backend/        # FastAPI backend
-├── frontend/       # React frontend
+├── backend/          # FastAPI backend application
+├── frontend/         # React frontend application
+├── .gitignore
 ├── package.json
 ├── render.yaml
 ├── server.js
 └── README.md
+```
 
-How It Works
+##💳 Payment Integration
 
-The React frontend provides the user interface for browsing fashion products and interacting with the shopping experience.
+Vestra integrates **Razorpay** to support online payments.
 
-The FastAPI backend handles server-side application logic and exposes APIs used by the frontend.
+The integration connects the application's checkout experience with Razorpay's payment services.
 
-The integrated payment gateway supports online payment processing as part of the checkout experience.
+Sensitive payment credentials should be stored in environment variables and never committed to the repository.
 
-Screenshots
 
-Add screenshots of the homepage, product listings, cart, and checkout interface here.
 
-Future Improvements
+##🔮 Future Enhancements
 
-- Enhanced product search and filtering
-- Improved user experience and performance
-- Additional order management features
-- Automated testing and deployment improvements
+- Advanced product search and filtering
+- Improved order tracking
+- Automated testing
+- Performance optimization
+- Additional payment and checkout improvements
 
-Author
+##👨‍💻 Developer
 
-Aditya Prasad
+**Aditya Prasad**
 
-B.Tech — Computer Science and Engineering (AI)
+B.Tech in Computer Science & Engineering (AI)
 
 GitHub: https://github.com/Aditya-web-cloud
+
+---
+
+⭐ If you find this project useful, consider starring the repository.
+
