@@ -16,10 +16,10 @@ Key Features
 Tech Stack
 
 Component| Technology
-Frontend| React, JavaScript
-Backend| Python, FastAPI
+Frontend | React, JavaScript
+Backend  | Python, FastAPI
 API Architecture| REST APIs
-Payments| Integrated payment gateway
+Payments | Integrated payment gateway
 Version Control| Git, GitHub
 
 Project Structure
